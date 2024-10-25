@@ -1,0 +1,17 @@
+.graficos-container {
+    display: flex;
+    flex-wrap: wrap;  /* Permite que os gráficos fiquem em múltiplas linhas */
+    justify-content: space-between;
+    
+}
+
+.grafico {
+    flex: 1 1 calc(50% - 20px); /* Cada gráfico ocupará 50% da largura */
+    min-width: 300px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+h3 {
+    text-align: center;
+}

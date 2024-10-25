@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Main from './Components/Main';
+import React from 'react';
+import Container from './Components/Container';
+import Navbar from './Components/Navbar';
+import Adicionar from './Components/Adicionar';
+import Gerenciar from './Components/Gerenciar';
+import Relatorio from './Components/Relatorio';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+       <Router>
+            <div>
+                <Navbar />
+                
+                <Routes>
+                 
+                 {/* Definindo as rotas */}
+             <Route path="/" element={<Adicionar />} />
+             <Route path="/gerenciar" element={<Gerenciar />} />
+             <Route path="/relatorio" element={<Relatorio />} />
+             {/* Definir uma rota inicial ou redirecionamento, se necessário */}
+           
+           
+         </Routes>
+               
+                
+            </div>
+        </Router>
+      
+</div>
   );
 }
 
