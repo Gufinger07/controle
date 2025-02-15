@@ -1,10 +1,16 @@
 version: 0.0
 os: linux
 files:
-  - source: /DevOps
-    destination: /var/www/html
+  - source: .
+    destination: /home/ec2-user/app
+
 hooks:
   BeforeInstall:
-    - location: scripts/delete_index.sh
+    - location: scripts/clean_up.sh
+      timeout: 300
+      runas: root
+
+  AfterInstall:
+    - location: scripts/start_server.sh
       timeout: 300
       runas: root
